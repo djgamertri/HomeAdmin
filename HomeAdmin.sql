@@ -2,6 +2,7 @@ create database HomeAdmin;
 use HomeAdmin;
 
 -- Tabla Multas
+
 create table Tax(
     TaxId int unsigned auto_increment primary key,
     TaxValue int unsigned not null,
@@ -9,6 +10,7 @@ create table Tax(
 );
 
 -- Procedimiento Registro de multas
+
 create procedure RegisterTax(
     in RegisterTaxValue int,
     in RegisterTaxYear year
@@ -16,12 +18,14 @@ create procedure RegisterTax(
 insert into Tax (TaxValue,TaxYear) values (RegisterTaxValue,RegisterTaxYear);
 
 -- Consulta especifica de Multas apartir de Año
+
 create procedure ShowTax(
 	in SelectYearTax year
 )
 select TaxId, TaxValue, TaxYear from Tax where TaxYear = SelectYearTax;
 
 -- Actualizacion de Año y valor de las multas
+
 create Procedure UpdateTax(
 	in UpdateTaxId int,
 	in UpdateTaxValue int,
