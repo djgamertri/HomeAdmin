@@ -18,6 +18,10 @@ Si deseas crear una nueva (Solo si esta aprobado por los demas miembros)
 
 - Ejecuta el comando `Git Checkout -b <Rama>`
 
+Si deseas sabes cuales son los archivos modificados 
+
+- Ejecuta el comando `Git status`
+
 !Esto hacerlo por cada archivo creado y/o modificado
 
 - Ejecuta el comando `Git add <Archivo con cambios>`
