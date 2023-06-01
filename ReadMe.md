@@ -10,10 +10,22 @@ Primero debes hacer comentarios de cada uno de los archivos creados por separado
 
 NO HACER `Git add .` seguido de un `Git commit -m "Cambios"` a menos de que los archivos mantegan una relacion muy similar
 
+Asegurate de estar haciendo los cambios en la rama correcta, para cambiar de rama 
+
+- Ejecuta el comando `Git checkout <Rama>`
+
+Si deseas crear una nueva (Solo si esta aprobado por los demas miembros) 
+
+- Ejecuta el comando `Git Checkout -b <Rama>`
+
 !Esto hacerlo por cada archivo creado y/o modificado
 
 - Ejecuta el comando `Git add <Archivo con cambios>`
 - Ejecuta el comando `Git commit -m "<Descripcion de los cambios hechos>"`
+
+Una vez hecho esto por cada archivo creado y/o modificado
+
+- Ejecuta el comando `Git push -u origin <rama>`
 
 ## Organización y reglas de proyecto
 
