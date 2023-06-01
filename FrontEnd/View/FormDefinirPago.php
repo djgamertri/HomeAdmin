@@ -1,11 +1,13 @@
 <?php 
-include_once "../Controller/SendData.php"
+error_reporting(0);
+include_once "../Controller/SendData.php";
 
 if ($_POST["TaxValue"] && $_POST["TaxYear"]) {
-    //llama directamente a la Funcion SendDataPost()
-    sendDataPost
+    echo "<h1>Registro Exitoso</h1>";
+    sendDataPost("http://localhost:3001/api/Tax",$_POST);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
