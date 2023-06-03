@@ -1,15 +1,16 @@
 <?php 
-error_reporting(0);
 include_once "../Controller/SendData.php";
 
-if ($_POST["TaxValue"] && $_POST["TaxYear"]) {
-    echo "<h1>Registro Exitoso</h1>";
-    sendDataPost("http://localhost:3001/api/Tax",$_POST);
+if(!empty($_POST)){
+    if ($_POST["TaxValue"] && $_POST["TaxYear"]) {
+        $data = json_decode(sendDataPost("http://localhost:3001/api/Tax",$_POST));
+        echo "<h1>$data->TaxValue</h1>";
+    }
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
