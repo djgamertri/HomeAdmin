@@ -57,7 +57,7 @@ function sendDataGet ($url){
 
     // Procesar la respuesta
     if ($httpCode == 200) {
-        
+        return $response;
         // Hacer algo con los datos de respuesta...
     } else {
         // La solicitud no fue exitosa, manejar el error adecuadamente
@@ -93,6 +93,7 @@ function sendDataUpdate($url,$data){
 
     // Procesar la respuesta
     if ($httpCode == 200) {
+        return $response;
         // colocar una vista a la cual redireccione cuando el registro sea correcto
         // Hacer algo con los datos de respuesta...
     } else {
@@ -130,6 +131,7 @@ function sendDataDelete($url,$data){
 
     // Procesar la respuesta
     if ($httpCode == 200) {
+        return $response;
         // colocar una vista a la cual redireccione cuando el registro sea correcto
         // Hacer algo con los datos de respuesta...
     } else {
