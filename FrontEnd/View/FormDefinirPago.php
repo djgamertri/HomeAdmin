@@ -1,13 +1,16 @@
 <?php 
-include_once "../Controller/SendData.php"
+include_once "../Controller/SendData.php";
 
-if ($_POST["TaxValue"] && $_POST["TaxYear"]) {
-    //llama directamente a la Funcion SendDataPost()
-    sendDataPost
+if(!empty($_POST)){
+    if ($_POST["TaxValue"] && $_POST["TaxYear"]) {
+        $data = json_decode(sendDataPost("http://localhost:3001/api/Tax",$_POST));
+        echo "<h1>$data->TaxValue</h1>";
+    }
 }
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
