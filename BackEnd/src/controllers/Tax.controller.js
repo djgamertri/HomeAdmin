@@ -2,7 +2,7 @@ import { conex } from "../../db/db.js";
 
 export const GetTax = async (req,res) => {
     try {
-        const id = parseInt(req.query.id);
+        const Id = parseInt(req.query.id);
         const [result] = await conex.query("SELECT * FROM Tax WHERE TaxId = ?;",[Id])
         res.json(result);
     } catch (error) {
