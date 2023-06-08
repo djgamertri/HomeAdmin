@@ -29,7 +29,7 @@ $data = json_decode(sendDataGet("http://localhost:3001/api/Residents"));
                         <tr>
                             <td><?php echo $item->IdResident?></td>
                             <td><?php echo $item->TypeDocumentResident?></td>
-                            <td><?php echo $item->FullnameResident?></td>
+                            <td><?php echo $item->NameResident?></td>
                             <td><?php echo $item->DateBornResident?></td>
                             <td><?php echo $item->PhoneNumberResident?></td>
                             <td><?php echo $item->EmailResident?></td>
