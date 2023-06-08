@@ -3,16 +3,16 @@
         <div class="container">
             <div class="container-form">
                 <h2>Formulario de Registro de usuarios</h2>
-                <form action="" method="post">
-                    <div>
-                        <label for="NameResident" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-input" id="NameResident " name="NameResident "
-                            placeholder="Nombre completo" required autofocus>
+                <form action="../../Controller/tax/SendData.php" method="post">
+                <div>
+                        <label for="FullnameResident" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-input" id="FullnameResident " name="FullnameResident "
+                            placeholder="Nombre completo" autofocus required>
                     </div>
                     <div>
-                        <label for="AgeResident" class="form-label">Edad</label>
-                        <input type="number" class="form-input" id="AgeResident" name="AgeResident"
-                            placeholder="Edad" required>
+                        <label for="DateBornResident" class="form-label">Fecha de nacimiento</label>
+                        <input type="date" class="form-input" id="DateBornResident" name="DateBornResident"
+                            placeholder="Fecha de nacimiento" required>
                     </div>
                     <div>
                         <label for="TypeDocumentResident" class="form-label">Tipo Documento</label>
@@ -25,8 +25,8 @@
                         </select>
                     </div>
                     <div>
-                        <label for="NumDocumentResident" class="form-label">Numero de documento</label>
-                        <input type="number" class="form-input" id="NumDocumentResident " name="NumDocumentResident"
+                        <label for="IdResident" class="form-label">Numero de documento</label>
+                        <input type="number" class="form-input" id="IdResident" name="IdResident"
                             placeholder="Numero de documento" required>
                     </div>
                     <div>
@@ -39,25 +39,21 @@
                         <input type="email" class="form-input" id="EmailResident" name="EmailResident"
                             placeholder="Correo" required>
                     </div>
-                    <div>
+                        <div>
                         <label for="NumberHouseResident" class="form-label">Numero casa</label>
                         <input type="number" class="form-input" id="NumberHouseResident" name="NumberHouseResident"
                             placeholder="Numero casa" required>
                     </div>
-
-
                     <div>
                         <label for="PasswordResident" class="form-label">Contraseña</label>
                         <input type="password" class="form-input" id="PasswordResident" name="PasswordResident"
                             placeholder="Contraseña" required>
                     </div>
-
-
-                    <div class="form-botton-end">
-                        <button type="submit" class="form-button">Registrarme</button>
+                        <div class="form-botton-end">
+                            <button type="submit" class="form-button">Registrarme</button>
+                        </div>
+                    </form>
                     </div>
-                </form>
-            </div>
             <?php include_once("../../Assets/FooterForm.php") ?>
         </div>
     </div>
