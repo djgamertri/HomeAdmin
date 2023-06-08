@@ -11,14 +11,14 @@ create table Tax(
 -- tabla Residente
 create table Resident(
 	IdResident int unsigned primary key,
-    FullnameResident varchar(255) not null,
+    NameResident varchar(255) not null,
     DateBornResident date not null,
     TypeDocumentResident Varchar(255) not null,
     PhoneNumberResident bigint Unsigned not null,
     EmailResident varchar(255) not null,
     NumberHouseResident smallint unsigned not null,
-    StatusResident ENUM('Activo', 'Inactivo', 'Pendiente') not null,
-    PasswordResident varchar(255) not null ,
+    StatusResident ENUM('Activo', 'Inactivo', 'Pendiente') not null DEFAULT,
+    PasswordResident varchar(255) not null,
 	ResidentRegister TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -49,7 +49,7 @@ update Tax SET TaxValue=UpdateTaxValue,TaxYear=UpdateTaxYear where TaxId=UpdateT
 -- Procedimiento Registro de Residente
 create procedure RegisterResident(
 	in RegisterIdResident int,
-    in RegisterFullnameResident varchar(255),
+    in RegisterNameResident varchar(255),
     in RegisterDateBornResident date,
     in RegisterTypeDocumentResident Varchar(255),
     in RegisterPhoneNumberResident bigint,
@@ -58,13 +58,13 @@ create procedure RegisterResident(
 	in RegisterPasswordResident varchar(255),
     in RegisterNumberHouseResident smallint
 )
-insert into Resident (IdResident,FullnameResident,DateBornResident,TypeDocumentResident,PhoneNumberResident,EmailResident,StatusResident,PasswordResident,NumberHouseResident)
-values (RegisterIdResident,RegisterFullnameResident,RegisterDateBornResident,RegisterTypeDocumentResident,RegisterPhoneNumberResident,RegisterEmailResident,RegisterStatusResident,RegisterPasswordResident,RegisterNumberHouseResident);
+insert into Resident (IdResident,NameResident,DateBornResident,TypeDocumentResident,PhoneNumberResident,EmailResident,StatusResident,PasswordResident,NumberHouseResident)
+values (RegisterIdResident,RegisterNameResident,RegisterDateBornResident,RegisterTypeDocumentResident,RegisterPhoneNumberResident,RegisterEmailResident,RegisterStatusResident,RegisterPasswordResident,RegisterNumberHouseResident);
 
 -- Procedimiento Actualizar Residente
 create procedure UpdateResident(
 	in UpdateIdResident int,
-    in UpdateFullnameResident varchar(255),
+    in UpdateNameResident varchar(255),
     in UpdateDateBornResident date,
 	in UpdateTypeDocumentResident Varchar(255),
     in UpdatePhoneNumberResident bigint,
@@ -73,7 +73,7 @@ create procedure UpdateResident(
     in UpdatePasswordResident varchar(255),
     in UpdateNumberHouseResident smallint
 )
-Update Resident Set TypeDocumentResident=UpdateTypeDocumentResident,FullnameResident=UpdateFullnameResident,DateBornResident=UpdateDateBornResident,PhoneNumberResident=UpdatePhoneNumberResident,EmailResident=UpdateEmailResident,StatusResident=UpdateStatusResident,PasswordResident=UpdatePasswordResident,NumberHouseResident=UpdateNumberHouseResident where IdResident=UpdateIdResident;
+Update Resident Set TypeDocumentResident=UpdateTypeDocumentResident,NameResident=UpdateNameResident,DateBornResident=UpdateDateBornResident,PhoneNumberResident=UpdatePhoneNumberResident,EmailResident=UpdateEmailResident,StatusResident=UpdateStatusResident,PasswordResident=UpdatePasswordResident,NumberHouseResident=UpdateNumberHouseResident where IdResident=UpdateIdResident;
 
 -- Pruebas de los procedimientos
 
