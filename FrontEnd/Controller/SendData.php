@@ -60,7 +60,7 @@ function sendDataUpdate($url,$data){
     // Configurar la solicitud cURL
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'update');
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'Patch');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json'
