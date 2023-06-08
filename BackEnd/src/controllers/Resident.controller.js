@@ -23,6 +23,28 @@ export const GetResidents = async (req,res) => {
     }
 }
 
+export const UpdateResident = async (req,res) => {
+    try {
+        const {Id,Name,Birthday,TypeDocument,Phone,Email,Estado,Pass,NumberHouse} = req.body
+        const [result] = await conex.query("call RegisterResident(?,?,?,?,?,?,?,?,?);",[Id,Name,Birthday,TypeDocument,Phone,Email,Estado,Pass,NumberHouse])
+        res.json({
+            Id,
+            Name,
+            Birthday,
+            TypeDocument,
+            Phone,
+            Email,
+            Estado,
+            Pass,
+            NumberHouse
+        });
+    } catch (error) {
+        return res.status(500).json({
+            message: "something goes wrong"
+        })
+    }
+}
+
 export const NewResident = async (req,res) => {
     try {
         const {Id,Name,Age,TypeDocument,NumDocument,Phone,Email,NumberHouse} = req.body
