@@ -8,6 +8,19 @@ create table Tax(
     TaxImplement TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- tabla Residente
+create table Resident(
+	IdResident int unsigned primary key,
+    FullnameResident varchar(255) not null,
+    DateBornResident date not null,
+    TypeDocumentResident Varchar(255) not null,
+    PhoneNumberResident bigint Unsigned not null,
+    EmailResident varchar(255) not null,
+    NumberHouseResident smallint unsigned not null,
+    StatusResident ENUM('Activo', 'Inactivo', 'Pendiente') not null,
+	ResidentRegister TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Procedimiento Registro de multas
 create procedure RegisterTax(
     in RegisterTaxValue int,
@@ -15,7 +28,7 @@ create procedure RegisterTax(
 )
 insert into Tax (TaxValue,TaxYear) values (RegisterTaxValue,RegisterTaxYear);
 
--- Consulta especifica de Multas apartir de AÑo
+-- Consulta especifica de Multas
 create procedure ShowTax(
 	in SelectYearTax year
 )
@@ -30,18 +43,7 @@ create Procedure UpdateTax(
 )
 update Tax SET TaxValue=UpdateTaxValue,TaxYear=UpdateTaxYear where TaxId=UpdateTaxId;
 
--- tabla Residente
-create table Resident(
-	IdResident int unsigned primary key,
-    FullnameResident varchar(255) not null,
-    DateBornResident date not null,
-    TypeDocumentResident Varchar(255) not null,
-    PhoneNumberResident bigint Unsigned not null,
-    EmailResident varchar(255) not null,
-    NumberHouseResident smallint unsigned not null,
-    StatusResident ENUM('Activo', 'Inactivo', 'Pendiente') not null,
-	ResidentRegister TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- Resident Procedure
 
 -- Procedimiento Registro de Residente
 create procedure RegisterResident(
