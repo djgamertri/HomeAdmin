@@ -8,6 +8,19 @@ create table Tax(
     TaxImplement TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- tabla Residente
+create table Resident(
+	IdResident int unsigned primary key,
+    FullnameResident varchar(255) not null,
+    DateBornResident date not null,
+    TypeDocumentResident Varchar(255) not null,
+    PhoneNumberResident bigint Unsigned not null,
+    EmailResident varchar(255) not null,
+    NumberHouseResident smallint unsigned not null,
+    StatusResident ENUM('Activo', 'Inactivo', 'Pendiente') not null,
+	ResidentRegister TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Procedimiento Registro de multas
 create procedure RegisterTax(
     in RegisterTaxValue int,
@@ -15,7 +28,7 @@ create procedure RegisterTax(
 )
 insert into Tax (TaxValue,TaxYear) values (RegisterTaxValue,RegisterTaxYear);
 
--- Consulta especifica de Multas apartir de AÑo
+-- Consulta especifica de Multas
 create procedure ShowTax(
 	in SelectYearTax year
 )
@@ -30,19 +43,7 @@ create Procedure UpdateTax(
 )
 update Tax SET TaxValue=UpdateTaxValue,TaxYear=UpdateTaxYear where TaxId=UpdateTaxId;
 
--- tabla Residente
-create table Resident(
-	IdResident int unsigned primary key,
-    FullnameResident varchar(255) not null,
-    DateBornResident date not null,
-    TypeDocumentResident Varchar(255) not null,
-    PhoneNumberResident bigint Unsigned not null,
-    EmailResident varchar(255) not null,
-    NumberHouseResident smallint unsigned not null,
-    StatusResident ENUM('Activo', 'Inactivo', 'Pendiente') not null,
-    PasswordResident varchar(255) not null ,
-	ResidentRegister TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- Resident Procedure
 
 -- Procedimiento Registro de Residente
 create procedure RegisterResident(
@@ -53,11 +54,10 @@ create procedure RegisterResident(
     in RegisterPhoneNumberResident bigint,
     in RegisterEmailResident varchar(255),
     in RegisterStatusResident ENUM('Activo', 'Inactivo', 'Pendiente'),
-	in RegisterPasswordResident varchar(255),
     in RegisterNumberHouseResident smallint
 )
-insert into Resident (IdResident,FullnameResident,DateBornResident,TypeDocumentResident,PhoneNumberResident,EmailResident,StatusResident,PasswordResident,NumberHouseResident)
-values (RegisterIdResident,RegisterFullnameResident,RegisterDateBornResident,RegisterTypeDocumentResident,RegisterPhoneNumberResident,RegisterEmailResident,RegisterStatusResident,RegisterPasswordResident,RegisterNumberHouseResident);
+insert into Resident (IdResident,FullnameResident,DateBornResident,TypeDocumentResident,PhoneNumberResident,EmailResident,StatusResident,NumberHouseResident)
+values (RegisterIdResident,RegisterFullnameResident,RegisterDateBornResident,RegisterTypeDocumentResident,RegisterPhoneNumberResident,RegisterEmailResident,RegisterStatusResident,RegisterNumberHouseResident);
 
 -- Procedimiento Actualizar Residente
 create procedure UpdateResident(
@@ -68,18 +68,17 @@ create procedure UpdateResident(
     in UpdatePhoneNumberResident bigint,
 	in UpdateEmailResident varchar(255),
     in UpdateStatusResident enum("Activo","Inactivo"),
-    in UpdatePasswordResident varchar(255),
     in UpdateNumberHouseResident smallint
 )
-Update Resident Set TypeDocumentResident=UpdateTypeDocumentResident,FullnameResident=UpdateFullnameResident,DateBornResident=UpdateDateBornResident,PhoneNumberResident=UpdatePhoneNumberResident,EmailResident=UpdateEmailResident,StatusResident=UpdateStatusResident,PasswordResident=UpdatePasswordResident,NumberHouseResident=UpdateNumberHouseResident where IdResident=UpdateIdResident;
+Update Resident Set TypeDocumentResident=UpdateTypeDocumentResident,FullnameResident=UpdateFullnameResident,DateBornResident=UpdateDateBornResident,PhoneNumberResident=UpdatePhoneNumberResident,EmailResident=UpdateEmailResident,StatusResident=UpdateStatusResident,NumberHouseResident=UpdateNumberHouseResident where IdResident=UpdateIdResident;
 
 -- Pruebas de los procedimientos
 
 #call RegisterTax(74000,"2022");
 #call UpdateTax(1,75000,"2023");
 #call ShowTax("2023");
-#call RegisterResident(1013260718,"andres fernando malagon","2005-12-20","documento de identidad",3142960599,"andresfernandoxd1591@gmail.com",'Activo',"2FICIuwba,ei{u7l#h}ZR@#",103);
-#call UpdateResident(1013260718,"Andres Fernando Malagon","2005-12-20","Cedula de Ciudadania",3212946031,"andresfernandoxd1591@gmail.com",'Inactivo',"_XtY3iZi*cbmFE?#5",175); 
+#call RegisterResident(1013260718,"andres fernando malagon","2005-12-20","documento de identidad",3142960599,"andresfernandoxd1591@gmail.com",'Activo',103);
+#call UpdateResident(1013260718,"Andres Fernando Malagon","2005-12-20","Cedula de Ciudadania",3212946031,"andresfernandoxd1591@gmail.com",'Inactivo',175); 
 
 -- Consultas
 

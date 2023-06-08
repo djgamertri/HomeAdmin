@@ -10,6 +10,14 @@ Primero debes hacer comentarios de cada uno de los archivos creados por separado
 
 NO HACER `Git add .` seguido de un `Git commit -m "Cambios"` a menos de que los archivos mantegan una relacion muy similar
 
+Primero debes descargar la rama en la cual deseas trabajar
+
+- Ejecuta el comando `Git checkout -t <Rama>`
+
+si no conoces cuales ramas que existen
+
+- Ejecuta el comando `Git branch -a`
+
 Asegurate de estar haciendo los cambios en la rama correcta, para cambiar de rama 
 
 - Ejecuta el comando `Git checkout <Rama>`
