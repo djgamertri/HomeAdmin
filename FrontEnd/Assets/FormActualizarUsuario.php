@@ -3,7 +3,7 @@
         <div class="container">
             <div class="container-form">
                 <h2>Actualizar datos de Usuario</h2>
-                <form action="../../Controller/tax/SendData.php" method="post">
+                <form action="../../Controller/Resident/UpdateResident.php" method="post">
                     <div>
                         <label for="FullnameResident" class="form-label">Nombre completo</label>
                         <input type="text" class="form-input" id="FullnameResident " name="FullnameResident "
