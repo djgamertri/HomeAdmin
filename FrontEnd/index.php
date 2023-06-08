@@ -1,0 +1,1 @@
+<?php header("location: ./view/Index/index.php") ?>
