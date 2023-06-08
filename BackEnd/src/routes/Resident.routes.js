@@ -9,7 +9,7 @@ router.get("/Resident", GetResident);
 
 router.get("/Residents", GetResidents);
 
-router.put("/Resident", UpdateResident)
+router.patch("/Resident", UpdateResident)
 
 router.delete("/Resident/:id")
 
