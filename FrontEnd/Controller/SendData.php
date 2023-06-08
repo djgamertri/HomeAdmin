@@ -57,10 +57,11 @@ function sendDataGet ($url){
 
 function sendDataUpdate($url,$data){
     $jsonData = json_encode($data);
+    
     // Configurar la solicitud cURL
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'Patch');
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json'
@@ -83,15 +84,14 @@ function sendDataUpdate($url,$data){
     // Procesar la respuesta
     if ($httpCode == 200) {
         return $response;
-        // colocar una vista a la cual redireccione cuando el registro sea correcto
+        // Colocar una vista a la cual redireccione cuando el registro sea correcto
         // Hacer algo con los datos de respuesta...
     } else {
         // La solicitud no fue exitosa, manejar el error adecuadamente
         echo 'Error en la solicitud: ' . $httpCode;
     }
-
-
 }
+
 
 function sendDataDelete($url,$data){
     $jsonData = json_encode($data);
