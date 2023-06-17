@@ -10,8 +10,7 @@ if(!empty($_POST)){
         if($data->NameResident){
             header("location: $lastPage?complete=true");
         }else{
-            var_dump($data);
-            // header("location: $lastPage?complete=false");
+            header("location: $lastPage?complete=false");
         }
     }
 }
