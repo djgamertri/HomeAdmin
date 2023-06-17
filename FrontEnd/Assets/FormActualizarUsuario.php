@@ -6,13 +6,11 @@
                 <form action="../../Controller/Resident/UpdateResident.php" method="post">
                     <div>
                         <label for="FullnameResident" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-input" id="FullnameResident " name="Name"
-                            placeholder="Nombre completo" autofocus>
+                        <input type="text" class="form-input" id="FullnameResident " name="Name" placeholder="Nombre completo" autofocus>
                     </div>
                     <div>
                         <label for="DateBornResident" class="form-label">Fecha de nacimiento</label>
-                        <input type="date" class="form-input" id="DateBornResident" name="Birthday"
-                            placeholder="Fecha de nacimiento">
+                        <input type="date" class="form-input" id="DateBornResident" name="Birthday" placeholder="Fecha de nacimiento">
                     </div>
                     <div>
                         <label for="TypeDocumentResident" class="form-label">Tipo Documento</label>
@@ -26,18 +24,15 @@
                     </div>
                     <div>
                         <label for="IdResident" class="form-label">Numero de documento</label>
-                        <input type="number" class="form-input" id="IdResident" name="Id"
-                            placeholder="Numero de documento">
+                        <input type="number" class="form-input" id="IdResident" name="Id" placeholder="Numero de documento">
                     </div>
                     <div>
                         <label for="PhoneNumberResident" class="form-label">Telefono</label>
-                        <input type="number" class="form-input" id="PhoneNumberResident" name="Phone"
-                            placeholder="Telefono">
+                        <input type="number" class="form-input" id="PhoneNumberResident" name="Phone" placeholder="Telefono">
                     </div>
                     <div>
                         <label for="EmailResident" class="form-label">Email</label>
-                        <input type="email" class="form-input" id="EmailResident" name="Email"
-                            placeholder="Correo">
+                        <input type="email" class="form-input" id="EmailResident" name="Email" placeholder="Correo">
                     </div>
                     <div>
                         <label for="StatusResident" class="form-label">Estado Residente</label>
@@ -51,19 +46,19 @@
                     </div>
                     <div>
                         <label for="NumberHouseResident" class="form-label">Numero casa</label>
-                        <input type="number" class="form-input" id="NumberHouseResident" name="NumberHouse"
-                            placeholder="Numero casa" >
+                        <input type="number" class="form-input" id="NumberHouseResident" name="NumberHouse" placeholder="Numero casa" >
                     </div>
                     <div>
                         <label for="PasswordResident" class="form-label">Contraseña</label>
-                        <input type="password" class="form-input" id="PasswordResident" name="Pass"
-                            placeholder="Contraseña">
+                        <input type="password" class="form-input" id="PasswordResident" name="Pass" placeholder="Contraseña">
                     </div>
                     <div class="form-botton-end">
                         <button type="submit" class="form-buttom-back">Regresar</button>
                         <button type="submit" class="form-button">Actualizar</button>
-                        </div>
-    </div>
+                    </div>
+                </form>
+            </div>
             <?php include_once("../../Assets/FooterForm.php") ?>
         </div>
+    </div>
 </section>
