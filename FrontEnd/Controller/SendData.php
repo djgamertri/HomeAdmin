@@ -31,7 +31,7 @@ function sendDataPost ($url,$data){
          // Hacer algo con los datos de respuesta...
      } else {
          // La solicitud no fue exitosa, manejar el error adecuadamente
-         echo 'Error en la solicitud: ' . $httpCode;
+         echo 'Error en la solicitud: ' . $httpCode . $response ;
      }
     
 }
