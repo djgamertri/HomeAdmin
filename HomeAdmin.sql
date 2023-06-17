@@ -86,11 +86,3 @@ Update Resident Set TypeDocumentResident=UpdateTypeDocumentResident,NameResident
 
 #select * from Tax;
 #select * from Resident;
-
-
-
-
-
-
-
-
