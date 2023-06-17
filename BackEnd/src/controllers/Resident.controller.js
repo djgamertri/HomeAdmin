@@ -41,9 +41,8 @@ export const UpdateResident = async (req,res) => {
 
 export const NewResident = async (req,res) => {
     try {
-        const State = "Activo";
         const {Id,Name,Birthday,TypeDocument,Phone,Email,Pass,NumberHouse} = req.body
-        const [result] = await conex.query("CALL RegisterResident(?,?,?,?,?,?,?,?,?);",[Id,Name,Birthday,TypeDocument,Phone,Email,State,Pass,NumberHouse])
+        const [result] = await conex.query("CALL RegisterResident(?,?,?,?,?,?,?,?);",[Id,Name,Birthday,TypeDocument,Phone,Email,Pass,NumberHouse])
         if(result.affectedRows === 0) return res.status(404).json({
             message: "Cant user register"
         })
