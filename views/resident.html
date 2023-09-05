@@ -208,9 +208,9 @@
                             name="Birthday" required>
                         <select id="TypeDocumentResident" name="TypeDocument" class="form-input">
                             <option class="form-option">Tipo de documento</option>
-                            <option class="form-option">Tarjeta de identidad</option>
-                            <option class="form-option">Cedula ciudadania</option>
-                            <option class="form-option">Cedula extranjeria</option>
+                            <option value="Tarjeta de identidad" class="form-option">Tarjeta de identidad</option>
+                            <option value="Cedula ciudadania" class="form-option">Cedula ciudadania</option>
+                            <option  value="Cedula extranjeria" class="form-option">Cedula extranjeria</option>
                         </select>
                         <input class="form-input" type="number" placeholder="Numero de documento" id="IdResident"
                             name="NumDocument" required>
@@ -229,9 +229,9 @@
                         <input class="form-input" type="password" placeholder="Contraseña" id="PasswordResident"
                             name="Pass" required>
                             <select id="State" name="State" class="form-input">
-                                <option class="form-option">Estado</option>
-                                <option class="form-option">Activo</option>
-                                <option class="form-option">Inactivo</option>
+                                <option  class="form-option">Estado</option>
+                                <option value="1" class="form-option">Activo</option>
+                                <option value="0" class="form-option">Inactivo</option>
                             </select></div></div>
                         <button class="btn-submit" type="submit">Registrar Usuario</button>
                     </form>

@@ -15,16 +15,18 @@ function Enviar(e) {
 
     const data = {
         "Pass" : pass.value,
-        "TypeDoc" : typeDoc.value,
-        "NumDoc" : numDoc.value,
-        "NameUser" : nameU.value,
-        "BirthDate" : birth.value,
+        "TypeDocument" : typeDoc.value,
+        "NumDocument" : numDoc.value,
+        "Name" : nameU.value,
+        "Birthday" : birth.value,
         "Phone" : phone.value,
         "Email" : email.value,
-        "NumHouse" : house.value,
-        "Roleuser" : role.value,
-        "StatusUser" : state.value
+        "NumberHouse" : house.value,
+        "Rol" : role.value,
+        "State" : state.value
     }
+
+    console.log(data)
 
     FetchData("/Register", "POST", data).then((respuesta) => {
 

@@ -10,11 +10,12 @@ function Enviar(e) {
     e.preventDefault()
 
     const data = {
-        "IdUser" : userPay.value,
-        "RegistDate" : datePay.value,
-        "StatusPayAdmin" : statePay.value,
-        "FilePayAdmin" : filePay.value,
+        "User" : userPay.value,
+        "Date" : datePay.value,
+        "State" : statePay.value,
+        "File" : filePay.value,
     }
+    console.log(data)
 
     FetchData("/Pay", "POST", data).then((respuesta) => {
 
