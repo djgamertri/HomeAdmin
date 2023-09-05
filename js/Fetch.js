@@ -35,8 +35,8 @@ function FetchData(Route, Method, Data = null) {
     });
 }
 
-function decodeToken(token) {
-  const Token = localStorage.getItem("Token");
+function decodeToken() {
+  const token = localStorage.getItem("Token");
   const base64Url = token.split('.')[1];
   const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
   const jsonPayload = decodeURIComponent(atob(base64));

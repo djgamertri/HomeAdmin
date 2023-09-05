@@ -1,3 +1,4 @@
+const Regist = document.getElementById("register")
 const nameU = document.getElementById("NameResident")
 const birth= document.getElementById("DateBornResident")
 const typeDoc= document.getElementById("TypeDocumentResident")
@@ -9,10 +10,10 @@ const role=document.getElementById("Rol")
 const pass = document.getElementById("PasswordResident")
 const state = document.getElementById("State")
 
-function enviar (e){
+function Enviar(e) {
     e.preventDefault()
 
-    const data={
+    const data = {
         "Pass" : pass.value,
         "TypeDoc" : typeDoc.value,
         "NumDoc" : numDoc.value,
@@ -24,26 +25,24 @@ function enviar (e){
         "Roleuser" : role.value,
         "StatusUser" : state.value
     }
-    SendData(data);
-}
 
-function SendData(dataPost){
-    localStorage.setItem("Token", respuesta.token)
-    if(Token){
-        const data = decodeToken(Token);
-        switch (data.rol) {
-            case 'Administrador':
-                FetchData("/Register","POST", dataPost).then((respuesta)=>{
-                    alert(respuesta)
-                });
+    FetchData("/Register", "POST", data).then((respuesta) => {
+
+        const Token = localStorage.getItem("Token")
+        if (Token) {
+            const data = decodeToken();
+            switch(data.rol){
+                case 'Usuario Normal':
+                    alert('NO puedes hacer solicitudes de este tipo')
                 break;
-            case 'Usuario Normal':
-                    alert("NO PUEDES REGISTRAR USUARIOS D:<")
-            break;
+                case 'Administrador': 
+                    alert(respuesta)
+                break;
+            }
         } 
-    }
-    else{
-        console.log("No se encontró un token.");
+        else {
+            console.log("No se encontró un token.");
+        }
 
-    }
+    });
 }

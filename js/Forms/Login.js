@@ -18,8 +18,11 @@ function Enviar(e) {
         localStorage.setItem("Token", respuesta.token)
 
         // Revisa la info del Token
+
+        const Token = localStorage.getItem("Token")
+
         if (Token) {
-            const data = decodeToken(Token);
+            const data = decodeToken();
             switch(data.rol){
                 case 'Usuario Normal':
                     window.location.replace("/views/Prueba.html");
@@ -31,6 +34,6 @@ function Enviar(e) {
         } else {
             console.log("No se encontró un token.");
         }
-        
+
     });
 }
