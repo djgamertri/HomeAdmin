@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/card.css">
+  <link rel="stylesheet" href="../css/cardDashboard.css">
+  <link rel="stylesheet" href="../css/table.css">
+  <link rel="stylesheet" href="../css/tableDashboard.css">
+  <link rel="stylesheet" href="../css/update.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/modalRegister.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <!--Navegación-->
+    <div class="navegation">
+      <ul>
+        <li>
+          <a href="">
+            <span class="icon">
+              <i class="fa-brands fa-reddit"></i>
+            </span>
+            <span class="title">Cafan II</span>
+          </a>
+        </li>
+        <li>
+          <a href="Dashboard.html">
+            <span class="icon">
+              <i class="fa-solid fa-house-chimney"></i>
+            </span>
+            <span class="title">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="resident.html">
+            <span class="icon">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <span class="title">Residentes</span>
+          </a>
+        </li>
+        <li>
+          <a href="Tax.html">
+            <span class="icon">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </span>
+            <span class="title">Cuotas</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="icon">
+              <i class="fa-solid fa-comment"></i>
+            </span>
+            <span class="title">Votaciones</span>
+          </a>
+        </li>
+        <li>
+          <a href="parking.html">
+            <span class="icon">
+              <i class="fa-solid fa-car"></i>
+            </span>
+            <span class="title">Parqueadero</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="icon">
+              <i class="fa-solid fa-users"></i>
+            </span>
+            <span class="title">Zona Comun</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="icon">
+              <i class="fa-solid fa-question"></i>
+            </span>
+            <span class="title">Ayuda</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="icon">
+              <i class="fa-solid fa-gear"></i>
+            </span>
+            <span class="title">Configuracion</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="icon">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+            <span class="title">Contraseña</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="icon">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </span>
+            <span class="title">Salir</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--main-->
+  <div class="main">
+    <!--Search-->
+    <div class="topbar">
+      <div class="toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="search">
+        <label>
+          <input type="text" placeholder="Escriba aquí" id="searchInput">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+      </div>
+      <div class="user">
+        <img src="../img/user.jpg" alt="">
+      </div>
+    </div>
+    <!--Cards-->
+    <div class="content-cards">
+      <div class="card open-modal btn" data-open="modal1">
+        <div>
+          <div class="numbers">Registrar</div>
+          <div class="cardName">Registrar residente</div>
+        </div>
+        <div class="iconCard">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+      <div class="card open-modal btn">
+        <div>
+          <a href="graficos.html">
+            <div class="numbers">Consultar</div>
+            <div class="cardName">Consultar residente</div>
+          </a>
+        </div>
+        <div class="iconCard">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+      <div class="card open-modal btn" data-open="modal2">
+        <div>
+          <div class="numbers">Modificar</div>
+          <div class="cardName">Modificar Residente</div>
+        </div>
+        <div class="iconCard">
+          <i class="fa-solid fa-rotate-right"></i>
+        </div>
+      </div>
+      <div class="card open-modal btn">
+        <div>
+          <a href="">
+            <div class="numbers">Eliminar</div>
+            <div class="cardName">Eliminar Residente</div>
+          </a>
+        </div>
+        <div class="iconCard">
+          <i class="fa-solid fa-delete-left"></i>
+        </div>
+      </div>
+    </div>
+    <div class="details">
+      <!--Table-->
+      <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Residentes</h2>
+          <a href="#" class="btn">Ver todo</a>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <td>Nombre</td>
+              <td>Casa</td>
+              <td>Estado</td>
+              <td>Estado</td>
+            </tr>
+          </thead>
+
+          <tbody id="tableBody">
+            <tr>
+              <td>Juan Esteban Murcia</td>
+              <td>205</td>
+              <td>Activo</td>
+              <td><span class="status catch-up">Al dia</span></td>
+            </tr>
+            <tr>
+              <td>Andres Fernando Malagon</td>
+              <td>101</td>
+              <td>Activo</td>
+              <td><span class="status catch-up">Al dia</span></td>
+            </tr>
+            <tr>
+              <td>Laura Valentina Aguilar</td>
+              <td>200</td>
+              <td>Activo</td>
+              <td><span class="status delivered">Debe</span></td>
+            <tr>
+              <td>Erick Rodriguez</td>
+              <td>113</td>
+              <td>Activo</td>
+              <td><span class="status delivered">Debe</span></td>
+            <tr>
+              <td>Juan Sebastian Peña</td>
+              <td>199</td>
+              <td>Activo</td>
+              <td><span class="status catch-up">Al dia</span></td>
+            </tr>
+            </tr>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--Update users-->
+      <div class="update-users">
+        <div class="cardHeader">
+          <h2>Residentes</h2>
+        </div>
+        <table>
+          <tr>
+            <td width="60px">
+              <div class="User-img"><img src="../img/user.jpg" alt=""></div>
+            </td>
+            <td>
+              <h4>Nombre residente <br> <span>205</span></h4>
+            </td>
+          </tr>
+          <tr>
+            <td width="60px">
+              <div class="User-img"><img src="../img/user.jpg" alt=""></div>
+            </td>
+            <td>
+              <h4>Nombre residente <br> <span>205</span></h4>
+            </td>
+          </tr>
+          <tr>
+            <td width="60px">
+              <div class="User-img"><img src="../img/user.jpg" alt=""></div>
+            </td>
+            <td>
+              <h4>Nombre residente <br> <span>205</span></h4>
+            </td>
+          </tr>
+          <tr>
+            <td width="60px">
+              <div class="User-img"><img src="../img/user.jpg" alt=""></div>
+            </td>
+            <td>
+              <h4>Nombre residente <br> <span>205</span></h4>
+            </td>
+          </tr>
+          <tr>
+            <td width="60px">
+              <div class="User-img"><img src="../img/user.jpg" alt=""></div>
+            </td>
+            <td>
+              <h4>Nombre residente <br> <span>205</span></h4>
+            </td>
+          </tr>
+          <tr>
+            <td width="60px">
+              <div class="User-img"><img src="../img/user.jpg" alt=""></div>
+            </td>
+            <td>
+              <h4>Nombre residente <br> <span>205</span></h4>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="modal" id="modal1" data-animation="slideInOutRight">
+      <div class="modal-dialog">
+          <header class="modal-header">
+              <div>
+              </div>
+              <div>Registro Usuarios</div>
+              <button class="close-modal btn" aria-label="close-modal" data-close>
+                  ✕
+              </button>
+          </header>
+          <section class="modal-content">
+              <form action="#" method="post" class="form-disposition">
+                  <div class="form-colums">
+                      <div class="colum">
+                  <input class="form-input" type="text" placeholder="Nombre" id="NameResident" name="Name"
+                      required>
+                  <input class="form-input" type="date" placeholder="fecha de nacimiento" id="DateBornResident"
+                      name="Birthday" required>
+                  <select id="TypeDocumentResident" name="TypeDocument" class="form-input">
+                      <option class="form-option">Tipo de documento</option>
+                      <option class="form-option">Tarjeta de identidad</option>
+                      <option class="form-option">Cedula ciudadania</option>
+                      <option class="form-option">Cedula extranjeria</option>
+                  </select>
+                  <input class="form-input" type="number" placeholder="Numero de documento" id="IdResident"
+                      name="NumDocument" required>
+                  <input class="form-input" type="number" placeholder="Telefono" id="PhoneNumberResident"
+                      name="Phone" required></div>
+                      <div class="colum">
+                  <input class="form-input" type="email" placeholder="Correo electronico" id="EmailResident"
+                      name="Email" required>
+                  <input class="form-input" type="number" placeholder="numero de casa" id="NumberHouseResident"
+                      name="NumberHouse" required>
+                      <select id="Rol" name="Rol" class="form-input">
+                          <option class="form-option">Rol</option>
+                          <option class="form-option">Administrador</option>
+                          <option class="form-option">Residente</option>
+                      </select>
+                  <input class="form-input" type="password" placeholder="Contraseña" id="PasswordResident"
+                      name="Pass" required>
+                      <select id="State" name="State" class="form-input">
+                          <option class="form-option">Estado</option>
+                          <option class="form-option">Activo</option>
+                          <option class="form-option">Inactivo</option>
+                      </select></div></div>
+                  <button class="btn-submit" type="submit">Registrar Usuario</button>
+              </form>
+          </section>
+      </div>
+  </div>
+  <div class="modal" id="modal2" data-animation="slideInOutLeft">
+      <div class="modal-dialog">
+          <header class="modal-header">
+              <div></div>
+              <div>Actualizar usuarios</div>
+              <button class="close-modal btn" aria-label="close-modal" data-close>
+                  ✕
+              </button>
+          </header>
+          <section class="modal-content">
+              <form action="#" method="post" class="form-disposition">
+                  <div class="form-colums">
+                  <div class="colum">
+                  <input class="form-input" type="text" id="IdUser" name="Id"
+                      readonly >
+                  <input class="form-input" type="text" placeholder="Nombre" id="NameResident" name="Name"
+                      required>
+                  <input class="form-input" type="date" placeholder="fecha de nacimiento" id="DateBornResident"
+                      name="Birthday" required>
+                  <select id="TypeDocumentResident" name="TypeDocument" class="form-input">
+                      <option class="form-option">Tipo de documento</option>
+                      <option class="form-option">Tarjeta de identidad</option>
+                      <option class="form-option">Cedula ciudadania</option>
+                      <option class="form-option">Cedula extranjeria</option>
+                  </select>
+                  <input class="form-input" type="number" placeholder="Numero de documento" id="IdResident"
+                      name="NumDocument" required>
+                  </div>
+                  <div class="colum">
+                  <input class="form-input" type="number" placeholder="Telefono" id="PhoneNumberResident"
+                      name="Phone" required>
+                  <input class="form-input" type="email" placeholder="Correo electronico" id="EmailResident"
+                      name="Email" required>
+                  <input class="form-input" type="number" placeholder="numero de casa" id="NumberHouseResident"
+                      name="NumberHouse" required>
+                  <select id="Rol" name="Rol" class="form-input">
+                      <option class="form-option">Rol</option>
+                      <option class="form-option">Administrador</option>
+                      <option class="form-option">Residente</option>
+                  </select>
+                  <input class="form-input" type="password" placeholder="Contraseña" id="PasswordResident"
+                      name="Pass" required>
+                  </div> </div>
+                  <select id="State" name="State" class="form-input">
+                      <option class="form-option">Estado</option>
+                      <option class="form-option">Activo</option>
+                      <option class="form-option">Inactivo</option>
+                  </select> 
+                  <button class="btn-submit" type="submit">Actualiza Usuario</button>
+              </form>
+          </section>
+      </div>
+  </div>
+    </div>
+  </div>
+
+
+  <!--Js-->
+  <script src="../js/main.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/search.js"></script>
+  <!--<script src="../js/function/charts.js"></script>-->
+
+  <!--Iconos-->
+  <script src="https://kit.fontawesome.com/af15331ceb.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+.details{
+    grid-template-columns: 1fr;
+}
+
+.details .cardHeader{
+    padding: 10px 20px 0 20px;
+}
+
+.details tbody{
+    height: 65vh;
+}
+
+.td-1{
+    width: 40%;
+}
+
+.td-2{
+    width: 60%;
+}
+
+a{
+    text-decoration: none;
+}

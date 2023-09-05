@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFAM II</title>
+  <link rel="stylesheet" href="./css/index/style.css">
+  <link rel="stylesheet" href="./css/nav.css">
+  <link rel="stylesheet" href="./css/modalRegister.css">
+  <script defer src="./js/modal.js" ></script>
+</head>
+
+<body>
+  <div class="content-background">
+    <!--<img src="img/index/imageback.png" alt="">-->
+    <div class="content-nav">
+      <nav>
+        <i class="fa-solid fa-house-flag icon"></i>
+        <ul>
+          <li><a href="#"></a>Sobre nosotros</li>
+          <li><a href="#"></a>Ubicación</li>
+          <li><a href="#"></a>Novedades</li>
+        </ul>
+        <div>
+          <button type="button" class="open-modal btn" data-open="modal1">
+              Login
+          </button>
+      </div>
+
+      <div class="modal" id="modal1" data-animation="slideInOutLeft">
+        <div class="modal-dialog">
+            <header class="modal-header">
+            <div></div>
+            <div>Login</div>
+            <button class="close-modal btn" aria-label="close-modal" data-close>
+                ✕  
+            </button>
+            </header>
+            <section class="modal-content">
+                <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="Login">
+                        <input class="form-input" name="Email" type="text" placeholder="Correo" id="Email" required>
+                        <input class="form-input" name="Pass" type="password" placeholder="Contraseña" id="Pass" required>
+                        <button class="btn-submit" type="submit">Ingresar</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+      </nav>
+      <div class="content">
+        <h1>PRUEBA</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error reiciendis voluptate veniam excepturi cupiditate odit aut a. Laboriosam minima similique, quisquam aliquam obcaecati earum, provident iure nihil possimus accusamus dolorem.</p>
+      </div>
+      <img src="img/index/imageback.png" alt="" class="next-image">
+    </div>
+  </div>
+
+
+
+  <!--iconos-->
+  <script src="./js/Fetch.js"></script>
+  <script src="./js/Forms/Login.js"></script>
+  <script src="https://kit.fontawesome.com/af15331ceb.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

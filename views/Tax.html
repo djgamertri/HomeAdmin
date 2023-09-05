@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/tableTax.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/modalRegister.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!--Navegación-->
+        <div class="navegation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-brands fa-reddit"></i>
+                        </span>
+                        <span class="title">Cafan II</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Dashboard.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </span>
+                        <span class="title">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="resident.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <span class="title">Residentes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Tax.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </span>
+                        <span class="title">Cuotas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-solid fa-comment"></i>
+                        </span>
+                        <span class="title">Votaciones</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="parking.html">
+                        <span class="icon">
+                            <i class="fa-solid fa-car"></i>
+                        </span>
+                        <span class="title">Parqueadero</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-solid fa-users"></i>
+                        </span>
+                        <span class="title">Zona Comun</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-solid fa-question"></i>
+                        </span>
+                        <span class="title">Ayuda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </span>
+                        <span class="title">Configuracion</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <span class="title">Contraseña</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </span>
+                        <span class="title">Salir</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--main-->
+    <div class="main">
+        <!--Search-->
+        <div class="topbar">
+            <div class="toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Escriba aquí" id="searchInput">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            <div class="user">
+                <img src="../img/user.jpg" alt="">
+            </div>
+        </div>
+        <div class="details">
+            <!--Table-->
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Cuotas</h2>
+                    <a href="#" class="btn card open-modal btn" data-open="modal1">Añadir</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="td-1">Valor cuota administrativa</td>
+                            <td class="td-2">Periodo de tiempo</td>
+                            <td>Modificar</td>
+                            <td>Eliminar</td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>70.000</td>
+                            <td>01/01/2023 </td>
+                            <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
+                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                        </tr>
+                        <tr>
+                            <td>70.000</td>
+                            <td>01/01/2023 </td>
+                            <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
+                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                        </tr>
+                        <tr>
+                            <td>70.000</td>
+                            <td>01/01/2023 </td>
+                            <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
+                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                        <tr>
+                            <td>70.000</td>
+                            <td>01/01/2023 </td>
+                            <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
+                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                        <tr>
+                            <td>70.000</td>
+                            <td>01/01/2023 </td>
+                            <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
+                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                        </tr>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal" id="modal1" data-animation="slideInOutRight">
+            <div class="modal-dialog">
+                <header class="modal-header">
+                    <div></div>
+                    <div>Registro Tarifa</div>
+                    <button class="close-modal btn" aria-label="close-modal" data-close>
+                        ✕
+                    </button>
+                </header>
+                <section class="modal-content">
+                    <form action="#" method="post" class="form-disposition">
+                        <input class="form-input" type="number" placeholder="Nombre del usuario" id="NameUser"
+                            name="User" required>
+                        <input class="form-input" type="date" placeholder="Fecha" id="Date" name="Date" required>
+                        <select id="State" name="State" class="form-input">
+                            <option class="form-option">Estado</option>
+                            <option class="form-option">Pago</option>
+                            <option class="form-option">No pago</option>
+                        </select>
+                        <input class="form-input" type="text" placeholder="descrpcion del pago" id="File" name="File" required value="Se pago la administracion">
+                        <button class="btn-submit" type="submit">Regitrar cuota</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <div class="modal" id="modal2" data-animation="slideInOutRight">
+            <div class="modal-dialog">
+                <header class="modal-header">
+                    <div></div>
+                    <div>Modificar Tarifa</div>
+                    <button class="close-modal btn" aria-label="close-modal" data-close>
+                        ✕
+                    </button>
+                </header>
+                <section class="modal-content">
+                    <form action="#" method="post" class="form-disposition">
+                        <input class="form-input" type="number" id="Id"
+                        name="Id" readonly>
+                        <input class="form-input" type="number" placeholder="Nombre del usuario" id="NameUser"
+                            name="User" required>
+                        <input class="form-input" type="date" placeholder="Fecha" id="Date" name="Date" required>
+                        <select id="State" name="State" class="form-input">
+                            <option class="form-option">Estado</option>
+                            <option class="form-option">Pago</option>
+                            <option class="form-option">No pago</option>
+                        </select>
+                        <input class="form-input" type="text" placeholder="descrpcion del pago" id="File" name="File" required value="Se pago la administracion">
+                        <button class="btn-submit" type="submit">Regitrar cuota</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--Js-->
+    <script src="../js/main.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/search.js"></script>
+    <!--<script src="../js/function/charts.js"></script>-->
+
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/af15331ceb.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

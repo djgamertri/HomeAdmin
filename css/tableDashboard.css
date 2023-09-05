@@ -1,0 +1,9 @@
+.details{
+    grid-template-columns: 2fr 1fr;
+}
+
+.details .recentOrders table tbody tr:hover{
+    background: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+}
