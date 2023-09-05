@@ -293,8 +293,8 @@
               </button>
           </header>
           <section class="modal-content">
-              <form action="#" method="post" class="form-disposition">
-                  <div class="form-colums">
+            <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="register">
+              <div class="form-colums">
                       <div class="colum">
                   <input class="form-input" type="text" placeholder="Nombre" id="NameResident" name="Name"
                       required>
@@ -332,6 +332,7 @@
           </section>
       </div>
   </div>
+
   <div class="modal" id="modal2" data-animation="slideInOutLeft">
       <div class="modal-dialog">
           <header class="modal-header">
@@ -342,14 +343,14 @@
               </button>
           </header>
           <section class="modal-content">
-              <form action="#" method="post" class="form-disposition">
-                  <div class="form-colums">
+            <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="update">
+              <div class="form-colums">
                   <div class="colum">
                   <input class="form-input" type="text" id="IdUser" name="Id"
                       readonly >
                   <input class="form-input" type="text" placeholder="Nombre" id="NameResident" name="Name"
                       required>
-                  <input class="form-input" type="date" placeholder="fecha de nacimiento" id="DateBornResident"
+                  <input class="form-input" type="date" placeholder="fecha de nacimiento" id="UpdateBornResident"
                       name="Birthday" required>
                   <select id="TypeDocumentResident" name="TypeDocument" class="form-input">
                       <option class="form-option">Tipo de documento</option>
@@ -393,6 +394,8 @@
   <script src="../js/main.js"></script>
   <script src="../js/modal.js"></script>
   <script src="../js/search.js"></script>
+  <script src="../js/Fetch.js" ></script>
+  <script src="../js/Forms/Resident.js"></script>
   <!--<script src="../js/function/charts.js"></script>-->
 
   <!--Iconos-->

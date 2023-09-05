@@ -216,18 +216,17 @@
                     </button>
                 </header>
                 <section class="modal-content">
-                    <form action="#" method="post" class="form-disposition">
-                        <input class="form-input" type="number" id="Id"
-                        name="Id" readonly>
-                        <input class="form-input" type="number" placeholder="Nombre del usuario" id="NameUser"
+                    <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="update">
+                        <input class="form-input" type="number" id="UpdatePayId" name="Id">
+                        <input class="form-input" type="number" placeholder="Nombre del usuario" id="UpdatePayUser"
                             name="User" required>
-                        <input class="form-input" type="date" placeholder="Fecha" id="Date" name="Date" required>
-                        <select id="State" name="State" class="form-input">
+                        <input class="form-input" type="date" placeholder="Fecha" id="UpdateDate" name="Date" required>
+                        <select id="UpdateState" name="State" class="form-input">
                             <option class="form-option">Estado</option>
                             <option class="form-option">Pago</option>
                             <option class="form-option">No pago</option>
                         </select>
-                        <input class="form-input" type="text" placeholder="descrpcion del pago" id="File" name="File" required value="Se pago la administracion">
+                        <input class="form-input" type="text" placeholder="descrpcion del pago" id="UpdateFile" name="File" required value="Se pago la administracion">
                         <button class="btn-submit" type="submit">Regitrar cuota</button>
                     </form>
                 </section>
@@ -243,6 +242,7 @@
     <script src="../js/search.js"></script>
     <script src="../js/Fetch.js"></script>
     <script src="../js/Forms/PagoCuota.js" ></script>
+    <script src="../js/Forms/Updates/UpagoCuota.js"></script>
     <!--<script src="../js/function/charts.js"></script>-->
 
     <!--Iconos-->
