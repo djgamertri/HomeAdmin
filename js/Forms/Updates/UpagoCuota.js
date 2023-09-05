@@ -11,11 +11,11 @@ function Enviar(e) {
     e.preventDefault()
 
     const data = {
-        "IdPay" : UpdateIdpay.value,
         "User" : UpdatePay.value,
         "Date" : UpdatedatePay.value,
         "State" : UpdatestatePay.value,
         "File" : UpdatefilePay.value,
+        "Id" : UpdateIdpay.value
     }
     console.log(data)
 
@@ -36,6 +36,5 @@ function Enviar(e) {
         else {
             console.log("No se encontró un token.");
         }
-
     });
 }
