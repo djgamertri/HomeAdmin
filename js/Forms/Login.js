@@ -18,7 +18,6 @@ function Enviar(e) {
         localStorage.setItem("Token", respuesta.token)
 
         // Revisa la info del Token
-
         if (Token) {
             const data = decodeToken(Token);
             switch(data.rol){
