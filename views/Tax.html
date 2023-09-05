@@ -190,8 +190,8 @@
                     </button>
                 </header>
                 <section class="modal-content">
-                    <form action="#" method="post" class="form-disposition">
-                        <input class="form-input" type="number" placeholder="Nombre del usuario" id="NameUser"
+                    <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="register">
+                        <input class="form-input" type="number" placeholder="Numero de documento Usuario" id="NameUser"
                             name="User" required>
                         <input class="form-input" type="date" placeholder="Fecha" id="Date" name="Date" required>
                         <select id="State" name="State" class="form-input">
@@ -241,6 +241,8 @@
     <script src="../js/main.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/search.js"></script>
+    <script src="../js/Fetch.js"></script>
+    <script src="../js/Forms/PagoCuota.js" ></script>
     <!--<script src="../js/function/charts.js"></script>-->
 
     <!--Iconos-->
