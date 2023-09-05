@@ -10,15 +10,20 @@ function Enviar(e) {
         "Email": Email.value,
         "Pass": Pass.value
     }
-    console.log(data);
+
     FetchData("/Login", "POST", data).then((respuesta) => {
+
+        // Ingresa el Token
+
         localStorage.setItem("Token", respuesta.token)
-        
+
+        // Revisa la info del Token
+
         if (Token) {
             const data = decodeToken(Token);
             switch(data.rol){
                 case 'Usuario Normal':
-                    window.location.replace("/views/23.html");
+                    window.location.replace("/views/Prueba.html");
                 break;
                 case 'Administrador': 
                     window.location.replace("/views/Dashboard.html");
@@ -27,5 +32,6 @@ function Enviar(e) {
         } else {
             console.log("No se encontró un token.");
         }
+        
     });
 }
