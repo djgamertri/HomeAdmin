@@ -1,3 +1,5 @@
+
+
 const Regist = document.getElementById("register")
 const nameU = document.getElementById("NameResident")
 const birth= document.getElementById("DateBornResident")
