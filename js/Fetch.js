@@ -18,7 +18,7 @@ function FetchData(Route, Method, Data = null) {
     requestOptions.body = JSON.stringify(Data);
   }
 
-  return fetch("http://localhost:3001/api" + Route, requestOptions)
+  return fetch("https://api-homeadmin-9egs-dev.fl0.io/api" + Route, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error en la solicitud");
@@ -35,8 +35,8 @@ function FetchData(Route, Method, Data = null) {
     });
 }
 
-function decodeToken(token) {
-  const Token = localStorage.getItem("Token");
+function decodeToken() {
+  const token = localStorage.getItem("Token");
   const base64Url = token.split('.')[1];
   const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
   const jsonPayload = decodeURIComponent(atob(base64));
