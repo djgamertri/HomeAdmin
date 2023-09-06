@@ -141,6 +141,7 @@
                         <tr>
                             <td class="td-1">Nombre</td>
                             <td class="td-2">Casa</td>
+                            <td class="td-2">ID</td>
                             <td class="td-3">Estado</td>
                             <td>Modificar</td>
                             <td>Eliminar</td>
@@ -151,35 +152,40 @@
                         <tr>
                             <td>Juan Esteban Murcia</td>
                             <td>205</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         </tr>
                         <tr>
                             <td>Andres Fernando Malagon</td>
                             <td>101</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         </tr>
                         <tr>
                             <td>Laura Valentina Aguilar</td>
                             <td>200</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         <tr>
                             <td>Erick Rodriguez</td>
                             <td>113</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         <tr>
                             <td>Juan Sebastian Peña</td>
                             <td>199</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         </tr>
                         </tr>
                         </tr>
@@ -199,7 +205,7 @@
                     </button>
                 </header>
                 <section class="modal-content">
-                    <form action="#" method="post" class="form-disposition">
+                    <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="register">
                         <div class="form-colums">
                             <div class="colum">
                         <input class="form-input" type="text" placeholder="Nombre" id="NameResident" name="Name"
@@ -208,9 +214,9 @@
                             name="Birthday" required>
                         <select id="TypeDocumentResident" name="TypeDocument" class="form-input">
                             <option class="form-option">Tipo de documento</option>
-                            <option class="form-option">Tarjeta de identidad</option>
-                            <option class="form-option">Cedula ciudadania</option>
-                            <option class="form-option">Cedula extranjeria</option>
+                            <option value="Tarjeta de identidad" class="form-option">Tarjeta de identidad</option>
+                            <option value="Cedula ciudadania" class="form-option">Cedula ciudadania</option>
+                            <option  value="Cedula extranjeria" class="form-option">Cedula extranjeria</option>
                         </select>
                         <input class="form-input" type="number" placeholder="Numero de documento" id="IdResident"
                             name="NumDocument" required>
@@ -223,15 +229,15 @@
                             name="NumberHouse" required>
                             <select id="Rol" name="Rol" class="form-input">
                                 <option class="form-option">Rol</option>
-                                <option class="form-option">Administrador</option>
-                                <option class="form-option">Residente</option>
+                                <option value="Administrador" class="form-option">Administrador</option>
+                                <option value="Residente" class="form-option">Residente</option>
                             </select>
                         <input class="form-input" type="password" placeholder="Contraseña" id="PasswordResident"
                             name="Pass" required>
                             <select id="State" name="State" class="form-input">
-                                <option class="form-option">Estado</option>
-                                <option class="form-option">Activo</option>
-                                <option class="form-option">Inactivo</option>
+                                <option  class="form-option">Estado</option>
+                                <option value="1" class="form-option">Activo</option>
+                                <option value="0" class="form-option">Inactivo</option>
                             </select></div></div>
                         <button class="btn-submit" type="submit">Registrar Usuario</button>
                     </form>
@@ -248,43 +254,42 @@
                     </button>
                 </header>
                 <section class="modal-content">
-                    <form action="#" method="post" class="form-disposition">
+                    <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="update">
                         <div class="form-colums">
                         <div class="colum">
-                        <input class="form-input" type="text" id="IdUser" name="Id"
-                            readonly >
-                        <input class="form-input" type="text" placeholder="Nombre" id="NameResident" name="Name"
+                        <input class="form-input" type="number" id="IdUser" name="Id" >
+                        <input class="form-input" type="text" placeholder="Nombre" id="UpdateNameResident" name="Name"
                             required>
-                        <input class="form-input" type="date" placeholder="fecha de nacimiento" id="DateBornResident"
+                        <input class="form-input" type="date" placeholder="fecha de nacimiento" id="UpdateBornResident"
                             name="Birthday" required>
-                        <select id="TypeDocumentResident" name="TypeDocument" class="form-input">
+                        <select id="UpdateTypeDocumentResident" name="TypeDocument" class="form-input">
                             <option class="form-option">Tipo de documento</option>
-                            <option class="form-option">Tarjeta de identidad</option>
-                            <option class="form-option">Cedula ciudadania</option>
-                            <option class="form-option">Cedula extranjeria</option>
+                            <option value="Tarjeta de identidad" class="form-option">Tarjeta de identidad</option>
+                            <option value="Cedula ciudadania" class="form-option">Cedula ciudadania</option>
+                            <option  value="Cedula extranjeria" class="form-option">Cedula extranjeria</option>
                         </select>
-                        <input class="form-input" type="number" placeholder="Numero de documento" id="IdResident"
+                        <input class="form-input" type="number" placeholder="Numero de documento" id="UpdateIdResident"
                             name="NumDocument" required>
                         </div>
                         <div class="colum">
-                        <input class="form-input" type="number" placeholder="Telefono" id="PhoneNumberResident"
+                        <input class="form-input" type="number" placeholder="Telefono" id="UpdatePhoneNumberResident"
                             name="Phone" required>
-                        <input class="form-input" type="email" placeholder="Correo electronico" id="EmailResident"
+                        <input class="form-input" type="email" placeholder="Correo electronico" id="UpdateEmailResident"
                             name="Email" required>
-                        <input class="form-input" type="number" placeholder="numero de casa" id="NumberHouseResident"
+                        <input class="form-input" type="number" placeholder="numero de casa" id="UpdateNumberHouseResident"
                             name="NumberHouse" required>
-                        <select id="Rol" name="Rol" class="form-input">
+                        <select id="UpdateRol" name="Rol" class="form-input">
                             <option class="form-option">Rol</option>
-                            <option class="form-option">Administrador</option>
-                            <option class="form-option">Residente</option>
+                            <option value="Administrador" class="form-option">Administrador</option>
+                            <option value="Residente" class="form-option">Residente</option>
                         </select>
-                        <input class="form-input" type="password" placeholder="Contraseña" id="PasswordResident"
+                        <input class="form-input" type="password" placeholder="Contraseña" id="UpdatePasswordResident"
                             name="Pass" required>
                         </div> </div>
-                        <select id="State" name="State" class="form-input">
-                            <option class="form-option">Estado</option>
-                            <option class="form-option">Activo</option>
-                            <option class="form-option">Inactivo</option>
+                        <select id="UpdateState" name="State" class="form-input">
+                            <option  class="form-option">Estado</option>
+                            <option value="1" class="form-option">Activo</option>
+                            <option value="0" class="form-option">Inactivo</option>
                         </select> 
                         <button class="btn-submit" type="submit">Actualiza Usuario</button>
                     </form>
@@ -298,7 +303,10 @@
     <script src="../js/main.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/search.js"></script>
-    <!--<script src="../js/function/charts.js"></script>-->
+    <script src="../js/Fetch.js" ></script>
+    <script src="../js/Forms/Resident.js"></script>
+    <script src="../js/Forms/Updates/Uresident.js"></script>
+    <script src="../js/Forms/Deletes/Dusers.js"></script>
 
     <!--Iconos-->
     <script src="https://kit.fontawesome.com/af15331ceb.js" crossorigin="anonymous"></script>
