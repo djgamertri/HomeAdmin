@@ -141,6 +141,7 @@
                         <tr>
                             <td class="td-1">Nombre</td>
                             <td class="td-2">Casa</td>
+                            <td class="td-2">ID</td>
                             <td class="td-3">Estado</td>
                             <td>Modificar</td>
                             <td>Eliminar</td>
@@ -151,35 +152,40 @@
                         <tr>
                             <td>Juan Esteban Murcia</td>
                             <td>205</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         </tr>
                         <tr>
                             <td>Andres Fernando Malagon</td>
                             <td>101</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         </tr>
                         <tr>
                             <td>Laura Valentina Aguilar</td>
                             <td>200</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         <tr>
                             <td>Erick Rodriguez</td>
                             <td>113</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         <tr>
                             <td>Juan Sebastian Peña</td>
                             <td>199</td>
+                            <td ><input id="DocUser" type="hidden" value="1">1</td>
                             <td>Al dia</td>
                             <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                            <td><a href="#"><span class="status delivered">Eliminar</span></a></td>
+                            <td><button class="status delivered" onclick="Enviar(event)" id="delete">Eliminar</button></td>
                         </tr>
                         </tr>
                         </tr>
@@ -300,6 +306,7 @@
     <script src="../js/Fetch.js" ></script>
     <script src="../js/Forms/Resident.js"></script>
     <script src="../js/Forms/Updates/Uresident.js"></script>
+    <script src="../js/Forms/Deletes/Dusers.js"></script>
 
     <!--Iconos-->
     <script src="https://kit.fontawesome.com/af15331ceb.js" crossorigin="anonymous"></script>
