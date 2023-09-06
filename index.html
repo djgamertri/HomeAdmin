@@ -5,55 +5,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CAFAM II</title>
-  <link rel="stylesheet" href="./css/index/style.css">
-  <link rel="stylesheet" href="./css/nav.css">
+  <link rel="stylesheet" href="./css/index/style.css" />
+  <link rel="stylesheet" href="./css/index/navIndex.css" />
+  <link rel="stylesheet" href="./css/index/features.css" />
+  <link rel="stylesheet" href="./css/index/footer.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/modalRegister.css">
   <script defer src="./js/modal.js" ></script>
 </head>
 
 <body>
   <div class="content-background">
-    <!--<img src="img/index/imageback.png" alt="">-->
-    <div class="content-nav">
-      <nav>
-        <i class="fa-solid fa-house-flag icon"></i>
-        <ul>
-          <li><a href="#"></a>Sobre nosotros</li>
-          <li><a href="#"></a>Ubicación</li>
-          <li><a href="#"></a>Novedades</li>
-        </ul>
-        <div>
-          <button type="button" class="open-modal btn" data-open="modal1">
-              Login
-          </button>
-      </div>
+  <header>
+    <nav>
+      <i class="bx bxs-home-alt-2">CAFAM II</i>
+      <ul>
+        <li><a href="#section">Sobre nosotros</a></li>
+        <li><a href="#Ubicacion">¿Donde nos encontramos?</a></li>
+        <li><a href="#Footer">Redes Sociales</a></li>
 
-      <div class="modal" id="modal1" data-animation="slideInOutLeft">
-        <div class="modal-dialog">
-            <header class="modal-header">
-            <div></div>
-            <div>Login</div>
-            <button class="close-modal btn" aria-label="close-modal" data-close>
-                ✕  
-            </button>
-            </header>
-            <section class="modal-content">
-                <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="Login">
-                        <input class="form-input" name="Email" type="text" placeholder="Correo" id="Email" required>
-                        <input class="form-input" name="Pass" type="password" placeholder="Contraseña" id="Pass" required>
-                        <button class="btn-submit" type="submit">Ingresar</button>
-                </form>
-            </section>
+      </ul>
+      <div>
+        <button type="button" class="open-modal btn" data-open="modal1" style="margin: 0;">
+          Login
+        </button>
+      </div>
+    </nav>
+  </header>
+  <section class="back">
+    <div class="back-content">
+      <h1>Bienvenido a CAFAM II</h1>
+      <p>Donde encuentras la casa de tus sueños</p>
+      <a href="#section" class="button">Empezar</a>
+    </div>
+  </section>
+  <section class="position_cards" id="section">
+    <h2>SOBRE NOSOTROS</h2>
+    <div class="cardsOne">
+      <div class="card card0">
+        <div class="card-content">
+          <h3>Zonas para toda la familia</h3>
+          <p>Tenemos disponibles zonas comunes para el uso de toda tu familia, contamos con parques, zonas verdes, salón
+            comunal e incluso con parqueadero para tu vehiculo.</p>
         </div>
+        <img class="card-image" src="https://img-co-1.trovit.com/1dz16l1svP12/1dz16l1svP12.1_11.jpg" alt="Card Image" />
+      </div>
+
+      <div class="card card1">
+        <div class="card-content">
+          <h3>Otra Tarjeta</h3>
+          <p>Descripción de otra tarjeta.</p>
+        </div>
+        <img class="card-image" src="./img/index/aboutus.webp" alt="Card Image" />
+      </div>
+
+      <div class="card card2">
+        <div class="card-content">
+          <h3>Otra Tarjeta</h3>
+          <p>El conjuno cuenta con 256 casas</p>
+        </div>
+        <img class="card-image" src="https://img-co-1.trovit.com/1M1yQ1r141n1n1R/1M1yQ1r141n1n1R.1_11.jpg" alt="Card Image" />
+      </div>
+    </div>
+  </section>
+  <section class="located" id="Ubicacion">
+    <h2>UBICACIÓN</h2>
+    <div>
+      Te dejamos nuestra ubicación para que nos visites
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.1080682712827!2d-74.12108311549005!3d4.751253828919738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f8592fe6715e9%3A0x681285f9046dfe8e!2sCiudadela%20CAFAM%2C%20Cra.%20145%20%23142f-59%2C%20Suba%2C%20Bogot%C3%A1%2C%20Cundinamarca!5e0!3m2!1ses-419!2sco!4v1694008547461!5m2!1ses-419!2sco" width="600" height="450" style="border:0; margin: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+  <footer>
+    <section class="Footer-content" id="Footer">
+      <div class="redesSociales">
+        <a href="http://www.facebook.com/cafamoficial"><i class="bx bxl-facebook-circle"></i></a>
+        <div class="Divider"></div>
+        <a href="http://twitter.com/cafamoficial"><i class="bx bxl-twitter"></i></a>
+        <div class="Divider"></div>
+        <a href="http://www.youtube.com/user/CanalCafam"><i class="bx bxl-youtube"></i></a>
+        <div class="Divider"></div>
+        <a href="http://www.instagram.com/cafamoficial/"><i class="bx bxl-instagram-alt"></i></a>
+        <div class="Divider"></div>
+      </div>
+      <div class="terms">
+        <p>Conjunto</p>
+        <div class="Divider"></div>
+        <p>Cafam II</p>
+        <div class="Divider"></div>
+        <p>&copy; derechos de autor 2023</p>
+      </div>
+    </section>
+  </footer>
+
+
+    <div class="modal" id="modal1" data-animation="slideInOutLeft">
+      <div class="modal-dialog">
+          <header class="modal-header">
+          <div></div>
+          <div>Login</div>
+          <button class="close-modal btn" aria-label="close-modal" data-close>
+              ✕  
+          </button>
+          </header>
+          <section class="modal-content">
+              <form action="#" method="post" class="form-disposition" onsubmit="Enviar(event)" id="Login">
+                      <input class="form-input" name="Email" type="text" placeholder="Correo" id="Email" required>
+                      <input class="form-input" name="Pass" type="password" placeholder="Contraseña" id="Pass" required>
+                      <button class="btn-submit" type="submit">Ingresar</button>
+              </form>
+          </section>
+      </div>
     </div>
 
-      </nav>
-      <div class="content">
-        <h1>PRUEBA</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error reiciendis voluptate veniam excepturi cupiditate odit aut a. Laboriosam minima similique, quisquam aliquam obcaecati earum, provident iure nihil possimus accusamus dolorem.</p>
-      </div>
-      <img src="img/index/imageback.png" alt="" class="next-image">
-    </div>
   </div>
 
 
@@ -61,7 +125,9 @@
   <!--iconos-->
   <script src="./js/Fetch.js"></script>
   <script src="./js/Forms/Login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/af15331ceb.js" crossorigin="anonymous"></script>
+
 
 </body>
 
