@@ -74,18 +74,18 @@
 }
 
 .status{
-    padding: 2px 4px;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
     color: var(--white);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
+    border-radius: 6px;
 }
 
 .catch-up{
-    background: var(--green);
+    background: var(--blue);
 }
 
 .delivered{
-    background: #f00 ;
+    background: var(--blue);
 }
 

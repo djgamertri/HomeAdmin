@@ -12,12 +12,13 @@ function fillTable(){
                           <td>${item.Phone}</td>
                           <td>${item.NumHouse}</td>
                           <td>${item.StatusUser}</td>
-                          <td><a href="#" data-open="modal2"><span class="status catch-up">Modificar</span></a></td>
-                          <td><button class="status delivered" onclick="Delete(${item.IdUser})" id="delete">Eliminar</button></td>
+                          <td><a href="#" data-open="modal2" onclick="Modificar(${item.IdUser})" id="update"><span class="status catch-up">Modificar</span></a></td>
+                          <td><a class="status delivered" onclick="Delete(${item.IdUser})" id="delete">Eliminar</a></td>
                       `;
           tbody.appendChild(newRow);
         });
         Evaluar()
       });
 }
+
 document.addEventListener("DOMContentLoaded", fillTable);
