@@ -113,6 +113,7 @@ function Enviar(parqueaderosAsignados) {
 
 const buttonSave = document.getElementById("Save");
 
+//
 buttonSave.addEventListener("click", () => {
   Enviar(parqueaderosAsignados);
 });
@@ -152,54 +153,62 @@ cards.forEach((card) => {
   });
 });
 
-// Agrega un evento al elemento `li` de la lista para seleccionar el residente
-residentList.addEventListener("click", (event) => {
-  // Selecciona el elemento `li` que recibió el click
-  const selectedLi = event.target;
-
-  // Establece la clase `active` en el elemento seleccionado
-  selectedLi.classList.add("active");
-
-  // Elimina la clase `active` de los demás elementos `li`
-  residentList.querySelectorAll("li").forEach((li) => {
-    if (li !== selectedLi) {
-      li.classList.remove("active");
-    }
-  });
-});
-
-// Agrega un evento al botón de "Asignar" del modal para asignar el residente seleccionado al slot correspondiente
-modal-content.querySelector(".btn-asignar").addEventListener("click", () => {
-  const selectedResident = modal-content.querySelector(
-    "#resident-list li.active"
-  );
-  const slotId = e.target.closest(".card").id;
-
-  // Asigna el residente al slot
-  parqueaderosAsignados.push({
-    usuario: selectedResident.textContent,
-    parqueadero: slotId,
-  });
-
-  // Pinta el slot como asignado
-  PintarTarjeta(slotId, "#8bc34a", selectedResident.textContent);
-});
-
-// Agrega un evento a los botones de "Agregar" de los slots disponibles para abrir el modal
-document.querySelectorAll(".card .addToSlot").forEach((button) => {
-  button.addEventListener("click", () => {
-    // Carga la lista de residentes sin parqueadero en el modal
-    FetchData("/ResidentWithOutParking", "GET").then((respuesta) => {
-      const residentList = modal - content.querySelector("#resident-list");
-      residentList.innerHTML = "";
-
-      respuesta.forEach((residente) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = residente.NameUser;
-        listItem.classList.add("list-group-item");
-
-        residentList.appendChild(listItem);
+//codigo nuevo
+function CargarResidentesSinParqueadero() {
+  const url = "/ResidentWithoutParking";
+  FetchData(url, "GET").then((respuesta) => {
+    const residentes = respuesta.data;
+    const ul = document.querySelector("#resident-list");
+    ul.innerHTML = "";
+    residentes.forEach((residente) => {
+      const li = document.createElement("li");
+      li.textContent = residente.NameUser + " - " + residente.Plate;
+      li.addEventListener("click", () => {
+        SeleccionarResidente(residente);
       });
+      ul.appendChild(li);
     });
   });
+}
+
+function SeleccionarResidente(residente) {
+  const ul = document.querySelector("#resident-list");
+  ul.querySelectorAll("li").forEach((li) => {
+    li.classList.remove("active");
+  });
+  const li = document.querySelector(
+    "li:contains('" + residente.NameUser + "')"
+  );
+  li.classList.add("active");
+}
+
+function AsignarResidente(residente, slot) {
+  const url = "/Parking";
+  const data = {
+    NameUser: residente.NameUser,
+    Plate: residente.Plate,
+    Slot: slot,
+  };
+
+  FetchData(url, "POST", data).then((respuesta) => {
+    if (respuesta.status === 200) {
+      console.log("Residente asignado correctamente.");
+      PintarTarjeta(slot, "#8bc34a", residente.NameUser, residente.Plate);
+    } else {
+      console.log("Error al asignar residente.");
+    }
+  });
+}
+
+const asignarParqueaderosButtonManual = document.getElementById(
+  "asignarParqueaderosButton"
+);
+asignarParqueaderosButtonManual.addEventListener("click", () => {
+  const ul = document.querySelector("#resident-list");
+  const li = ul.querySelector(".active");
+  const residente = li.textContent.split(" - ")[0];
+
+  const slot = document.querySelector(".addToSlot").dataset.slot;
+
+  AsignarResidente(residente, slot);
 });
