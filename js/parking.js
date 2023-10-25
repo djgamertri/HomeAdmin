@@ -1,6 +1,7 @@
 let parqueaderosData = null;
 let parqueaderosEnUsoData = null;
 let parqueaderosAsignados = [];
+let residenteSeleccionado = null;
 
 FetchData("/ResidentWithOutParking", "GET").then((respuesta) => {
   parqueaderosData = respuesta;
@@ -9,6 +10,7 @@ FetchData("/ResidentWithOutParking", "GET").then((respuesta) => {
 FetchData("/ResidentWithParking", "GET").then((respuesta) => {
   parqueaderosEnUsoData = respuesta;
   ParqueaderosEnUso(parqueaderosEnUsoData);
+  console.log(respuesta)
 });
 
 function asignarParqueaderos(datos) {
@@ -129,27 +131,27 @@ asignarParqueaderosButton.addEventListener("click", () => {
 
 const cards = document.querySelectorAll(".card");
 
+
 cards.forEach((card) => {
   card.addEventListener("mouseover", () => {
     const cardId = card.id;
     if (Disponibles().includes(parseInt(cardId))) {
       const addToSlot = card.querySelector(".addToSlot");
       addToSlot.style.display = "block";
+      addToSlot.dataset.slot = cardId; // Guarda el id del slot en el dataset
       const number = card.querySelector(".numbers");
       number.style.display = "none";
-      //console.log("El slot seleccionado está disponible.");
+
+      // Agrega un evento de clic para abrir el modal y cargar los residentes
+      addToSlot.addEventListener("click", () => {
+        CargarResidentesSinParqueadero();
+        const modal = document.getElementById("modal1");
+        modal.style.display = "block";
+      });
     } else {
       const addToSlot = card.querySelector(".addToSlot");
       addToSlot.style.display = "none";
-      //console.log("El slot seleccionado está ocupado.");
     }
-  });
-
-  card.addEventListener("mouseout", () => {
-    const number = card.querySelector(".numbers");
-    number.style.display = "block";
-    const addToSlot = card.querySelector(".addToSlot");
-    addToSlot.style.display = "none";
   });
 });
 
@@ -157,7 +159,7 @@ cards.forEach((card) => {
 function CargarResidentesSinParqueadero() {
   const url = "/ResidentWithoutParking";
   FetchData(url, "GET").then((respuesta) => {
-    const residentes = respuesta.data;
+    const residentes = respuesta; // Usa directamente la respuesta de la API
     const ul = document.querySelector("#resident-list");
     ul.innerHTML = "";
     residentes.forEach((residente) => {
@@ -175,12 +177,25 @@ function SeleccionarResidente(residente) {
   const ul = document.querySelector("#resident-list");
   ul.querySelectorAll("li").forEach((li) => {
     li.classList.remove("active");
+    if (li.textContent.includes(residente.NameUser)) {
+      li.classList.add("active");
+    }
   });
-  const li = document.querySelector(
-    "li:contains('" + residente.NameUser + "')"
-  );
-  li.classList.add("active");
+
+  // Guarda el residente seleccionado en una variable global
+  residenteSeleccionado = residente;
 }
+
+const asignarParqueaderosButtonManual = document.getElementById("btn-asignar");
+
+asignarParqueaderosButtonManual.addEventListener("click", () => {
+  if (residenteSeleccionado) {
+    const slot = document.querySelector(".addToSlot").dataset.slot;
+    AsignarResidente(residenteSeleccionado, slot);
+  } else {
+    console.log("No se ha seleccionado ningún residente.");
+  }
+});
 
 function AsignarResidente(residente, slot) {
   const url = "/Parking";
@@ -194,21 +209,11 @@ function AsignarResidente(residente, slot) {
     if (respuesta.status === 200) {
       console.log("Residente asignado correctamente.");
       PintarTarjeta(slot, "#8bc34a", residente.NameUser, residente.Plate);
+      // Cierra el modal después de asignar el parqueadero
+      const modal = document.getElementById("modal1");
+      modal.style.display = "none";
     } else {
       console.log("Error al asignar residente.");
     }
   });
 }
-
-const asignarParqueaderosButtonManual = document.getElementById(
-  "asignarParqueaderosButton"
-);
-asignarParqueaderosButtonManual.addEventListener("click", () => {
-  const ul = document.querySelector("#resident-list");
-  const li = ul.querySelector(".active");
-  const residente = li.textContent.split(" - ")[0];
-
-  const slot = document.querySelector(".addToSlot").dataset.slot;
-
-  AsignarResidente(residente, slot);
-});
