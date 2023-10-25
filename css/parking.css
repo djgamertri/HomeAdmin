@@ -96,6 +96,41 @@
   cursor: pointer;
 }
 
+.btn-asignar {
+  margin-top: 50px;
+  padding: 10px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#resident-list li {
+  list-style: number;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+
+#resident-list li:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.active {
+  background-color: #4caf50;
+  color: white;
+}
+
 @media (max-width: 1680px) {
   .content-cardsParking {
     grid-template-columns: repeat(5, 1fr);
