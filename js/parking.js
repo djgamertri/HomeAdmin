@@ -2,6 +2,10 @@ let parqueaderosData = null;
 let parqueaderosEnUsoData = null;
 let parqueaderosAsignados = [];
 let residenteSeleccionado = null;
+const asignarParqueaderosButtonManual = document.getElementById("btn-asignar");
+const buttonSave = document.getElementById("Save");
+const asignarParqueaderosButton = document.getElementById("asignarParqueaderosButton");
+const cards = document.querySelectorAll(".card");
 
 FetchData("/ResidentWithOutParking", "GET").then((respuesta) => {
   parqueaderosData = respuesta;
@@ -113,24 +117,16 @@ function Enviar(parqueaderosAsignados) {
   });
 }
 
-const buttonSave = document.getElementById("Save");
 
 //
 buttonSave.addEventListener("click", () => {
   Enviar(parqueaderosAsignados);
 });
 
-const asignarParqueaderosButton = document.getElementById(
-  "asignarParqueaderosButton"
-);
-
 asignarParqueaderosButton.addEventListener("click", () => {
   parqueaderosAsignados = asignarParqueaderos(parqueaderosData);
   ParqueaderosEnUso(parqueaderosEnUsoData);
 });
-
-const cards = document.querySelectorAll(".card");
-
 
 cards.forEach((card) => {
   card.addEventListener("mouseover", () => {
@@ -186,7 +182,6 @@ function SeleccionarResidente(residente) {
   residenteSeleccionado = residente;
 }
 
-const asignarParqueaderosButtonManual = document.getElementById("btn-asignar");
 
 asignarParqueaderosButtonManual.addEventListener("click", () => {
   if (residenteSeleccionado) {
@@ -199,11 +194,10 @@ asignarParqueaderosButtonManual.addEventListener("click", () => {
 
 function AsignarResidente(residente, slot) {
   const url = "/Parking";
-  const data = {
-    NameUser: residente.NameUser,
-    Plate: residente.Plate,
-    Slot: slot,
-  };
+  const data = [{
+    parqueadero: slot,
+    placa: residente.Plate,
+  }];
 
   FetchData(url, "POST", data).then((respuesta) => {
     if (respuesta.status === 200) {
